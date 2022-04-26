@@ -1,0 +1,3 @@
+const marks = [99,89,96,91];
+
+console.log(marks.map(marks => marks));

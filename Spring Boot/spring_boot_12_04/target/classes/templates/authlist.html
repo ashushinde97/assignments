@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Auther List</title>
+</head>
+<body>
+<table border="1px" align="center">
+ <tr>
+  <th>Auther ID</th>
+  <th>Auther Name</th>
+  <th>Email</th>
+  <th>Action</th>
+ </tr>
+ <tr th:each="data:${ulist}">
+ <td th:text=${data.auid}></td>
+ <td th:text=${data.authname}></td>
+ <td th:text=${data.email}></td>
+ <!-- <td><a href="/@{'/editauth/' + ${data.auid}}">Edit</a>||<a href="/@{'/delauther/' + ${data.auid}}">delete</a></td>
+  --><td>
+    <a th:href="@{/editauth(id=${data.auid})}"> Edit</a> || <a th:href="@{/delauth(id=${data.auid})}"> Delete</a> <br/>
+</td>
+ </tr>
+ 
+</table>
+
+<!-- <table align="center">
+<tr>
+ <th>Cityid</th>
+ <th>City name</th>
+</tr>
+<tr th:each="city:${citylist}">
+  <td th:text=${city.cityid}></td>
+  <td th:text=${city.cname}></td>
+</tr>
+</table> -->
+</body>
+</html>

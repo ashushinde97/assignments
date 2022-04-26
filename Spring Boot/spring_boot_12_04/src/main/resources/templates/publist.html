@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Auther List</title>
+</head>
+<body>
+<table border="1px" align="center">
+ <tr>
+  <th>Publisher ID</th>
+  <th>Publisher Name</th>
+  <th>Email</th>
+  <th>Address</th>
+  <th>Action</th>
+ </tr>
+ <tr th:each="data:${ulist}">
+ <td th:text=${data.pubid}></td>
+ <td th:text=${data.publishername}></td>
+ <td th:text=${data.emailid}></td>
+ <td th:text=${data.address}></td>
+ <td><a th:href="@{/editpub(id=${data.pubid})}">Edit</a>||<a th:href="@{/delpub(id=${data.pubid})}">delete</a></td>
+ </tr>
+ 
+</table>
+
+<!-- <table align="center">
+<tr>
+ <th>Cityid</th>
+ <th>City name</th>
+</tr>
+<tr th:each="city:${citylist}">
+  <td th:text=${city.cityid}></td>
+  <td th:text=${city.cname}></td>
+</tr>
+</table> -->
+</body>
+</html>

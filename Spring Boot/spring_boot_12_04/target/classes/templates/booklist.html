@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Book List</title>
+</head>
+<body>
+<table border="1px" align="center">
+ <tr>
+  <th>Book ID</th>
+  <th>Auther 1</th>
+  <th>Auther 2</th>
+  <th>Auther 3</th>
+  <th>Publisher </th>
+  <th>Price</th>
+  <th>Title</th>
+ </tr>
+ <tr th:each="data:${ulist}">
+ <td th:text=${data.btid}></td>
+ <td th:text=${data.auid1}></td>
+ <td th:text=${data.auid2}></td>
+ <td th:text=${data.auid3}></td>
+  <td th:text=${data.pubid}></td>
+   <td th:text=${data.price}></td>
+    <td th:text=${data.title}></td>
+ <!-- <td><a href="/@{'/editauth/' + ${data.auid}}">Edit</a>||<a href="/@{'/delauther/' + ${data.auid}}">delete</a></td>
+  --><td>
+    <a th:href="@{/editauth(id=${data.btid})}"> Edit</a> || <a th:href="@{/delbook(id=${data.btid})}"> Delete</a> <br/>
+</td>
+ </tr>
+ 
+</table>
+
+<!-- <table align="center">
+<tr>
+ <th>Cityid</th>
+ <th>City name</th>
+</tr>
+<tr th:each="city:${citylist}">
+  <td th:text=${city.cityid}></td>
+  <td th:text=${city.cname}></td>
+</tr>
+</table> -->
+</body>
+</html>

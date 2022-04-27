@@ -1,0 +1,58 @@
+
+<div class="col-md-2"></div>
+<div class="col-md-8">
+   <form [formGroup]="studentform" (ngSubmit)="onSubmit()">
+       <div class="form-group">
+           <label for="fname">FirstName</label>
+           <input type="text" id="fname" name="fname" formControlName="fname" class="form-control">
+<!-- <div *ngIf="studentform.controls['fname'].invalid && studentform.controls['fname'].touched">
+ <span class="error" *ngIf="studentform.controls['fname'].errors?.['required']">First name is required</span>
+ <span class="error" *ngIf="studentform.controls['fname'].errors?.['minlength']">First name at least have 2 char </span>
+</div> -->
+       </div>
+       <div class="form-group">
+        <label for="clsname">Class</label>
+        <input type="text" id="clsname" name="clsname" formControlName="clsname" class="form-control">
+       </div>
+       <div class="form-group">
+        <label for="rollno">Roll No</label>
+        <input type="number" id="rollno" name="rollno" formControlName="rollno" class="form-control">
+       </div>
+       <div class="form-group">
+        <label for="math">Maths</label>
+        <input type="number" id="math" name="math" formControlName="math" class="form-control">
+       </div>
+       <div class="form-group">
+        <label for="physics">Physics</label>
+        <input type="number" id="physics" name="physics" formControlName="physics" class="form-control">
+       </div>
+       <div class="form-group">
+        <label for="chemistry">Chemistry</label>
+        <input type="number" id="chemistry" name="chemistry" formControlName="chemistry" class="form-control">
+       </div>
+       <div class="form-group">
+        <label for="hindi">Hindi</label>
+        <input type="number" id="hindi" name="hindi" formControlName="hindi" class="form-control">
+       </div>
+       <div class="form-group">
+        <label for="english">English</label>
+        <input type="number" id="english" name="english" formControlName="english" class="form-control">
+       </div>
+      
+       <div class="form-group">
+           <button type="submit" (click)="Submit()" class="btn btn-success"  [disabled]="!studentform.valid">Send</button>
+       </div>
+       <div>
+           <table>
+               <tr>
+               
+                <h3>{{this.showresult}}</h3></tr>
+               <tr> <h3>{{this.showgrade}}</h3></tr>
+                
+                
+        </table>
+           </div>
+   </form>
+</div>
+
+<div class="col-md-2"></div>

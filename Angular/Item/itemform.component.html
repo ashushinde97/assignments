@@ -1,0 +1,37 @@
+<div class="col-md-2"></div>
+<div class="col-md-8">
+   <form [formGroup]="itemform" (ngSubmit)="onSubmit()">
+       <div class="form-group">
+           <label for="name">name</label>
+           <input type="text" id="name" name="name" formControlName="name" class="form-control">
+<!-- <div *ngIf="studentform.controls['fname'].invalid && studentform.controls['fname'].touched">
+ <span class="error" *ngIf="studentform.controls['fname'].errors?.['required']">First name is required</span>
+ <span class="error" *ngIf="studentform.controls['fname'].errors?.['minlength']">First name at least have 2 char </span>
+</div> -->
+       </div>
+       <div class="form-group">
+        <label for="price">price</label>
+        <input type="number" id="price" name="price" formControlName="price" class="form-control">
+       </div>
+       <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" formControlName="quantity" class="form-control">
+       </div>
+       <div class="form-group">
+        <label for="discount">Discount</label>
+        <input type="number" id="discount" name="discount" formControlName="discount" class="form-control">
+       </div>
+      
+       <div class="form-group">
+           <button type="submit" (click)="send()" class="btn btn-success"  [disabled]="!itemform.valid">Send</button>
+       </div>
+   </form>
+</div>
+<div>
+    <table>
+   <tr> {{this.showtotal}}</tr>
+   <tr> {{this.showdis}}</tr>
+   <tr>{{this.showlist}}</tr>
+</table>
+</div>
+<div class="col-md-2"></div>
